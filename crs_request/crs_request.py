@@ -137,7 +137,7 @@ class CRSHandler:
         if grade_string == None:
             return 0.0
         else:
-            if re.match(r'(INC\()?\s*P\s+\)?',grade_string):
+            if re.match(r'(INC\()?\s*P\s*\)?',grade_string):
                 return 3.0
             elif grade_string == 'INC':
                 return 4.0
