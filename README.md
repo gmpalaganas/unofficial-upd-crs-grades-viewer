@@ -3,9 +3,9 @@ Unofficial University of the Philippines Dilaman Grades Viewer
 
 About 
 -----
-    This aim of this project is to create an app where users could easily view and save their grades in PDF format
+This aim of this project is to create an app where users could easily view and save their grades in PDF format
 
-    *Disclaimer: The generated grades pdf is not meant to replace the TCG or True Copy of Grades*
+*Disclaimer: The generated grades pdf is not meant to replace the TCG or True Copy of Grades*
 
 Dependencies
 -----
