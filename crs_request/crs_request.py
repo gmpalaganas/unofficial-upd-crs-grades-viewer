@@ -25,7 +25,8 @@ LOGIN_PASSWORD_FORM = 'pwd_password'
 GRADE_TABLE_CLASS_NAME = 'tbl_grade-info'
 
 class CRSHandler:
-
+    
+    # A different request header can be used by adding it to the constructor
     def __init__(self,request_header=None):
         self.session = requests.session()
 
@@ -152,12 +153,14 @@ class CRSHandler:
         grade_float = self.grade_string_to_float(subject['grade'])
         return grade_float <= 3.0
 
+# An exception meant when the requests fails
 class RequestFailedException(Exception):
+    # Constructor takes the response code
     def __init__(self, reponse_code):
         self.response_code = response_code
 
     def __str__(self):
-        return repr(self.response_code)
+        return 'Response code : ' + repr(self.response_code)
 
 # Removes 'tab', 'newline', and unicode characters in the given string
 def to_ascii(s):
