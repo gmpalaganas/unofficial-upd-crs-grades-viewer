@@ -1,3 +1,6 @@
+import re
+import string
+
 # Removes 'tab', 'newline', and unicode characters in the given string
 def to_ascii(s):
     return re.sub('[\t\n]+','',filter(lambda x: x in string.printable, s))
@@ -35,5 +38,5 @@ def grade_string_to_float(grade_string):
 
  # Checks if the grade garnered in the given class is passing
 def is_subject_pass(subject):
-    grade_float = utils.grade_string_to_float(subject['grade'])
+    grade_float = grade_string_to_float(subject['grade'])
     return grade_float <= 3.0

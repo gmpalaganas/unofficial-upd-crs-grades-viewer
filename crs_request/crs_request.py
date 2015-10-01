@@ -2,6 +2,7 @@ import utils
 import requests
 import re
 import string
+import json
 from bs4 import BeautifulSoup
 
 # URLs
@@ -85,7 +86,7 @@ class CRSHandler:
 
             for row in rows:
                 try:
-                    cols = [ self.format_grade_string(col.string) for col in row.find_all('td') ]
+                    cols = [ utils.format_grade_string(col.string) for col in row.find_all('td') ]
                     subject = {
                             'tag'        : cols[0],
                             'code'       : cols[1],
@@ -116,7 +117,18 @@ class CRSHandler:
                     unit_count += utils.units_string_to_float(subject['units']) 
 
         return unit_count
-    
+
+    # Given a grades list, convert it to JSON fomrat (compact)
+    def grades_to_json(self,grades,pretty=False):
+        grades_dict = dict(grades)
+        grades_json = ''
+
+        if pretty:
+            grades_json = json.dumps(grades_dict, indent=4, separators=(',', ': '))
+        else:
+            grades_json = json.dumps(grades_dict, separators=(',',':'))
+
+        return grades_json
    
 # An exception meant when the requests fails
 class RequestFailedException(Exception):
