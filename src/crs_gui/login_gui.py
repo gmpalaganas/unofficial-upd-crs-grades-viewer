@@ -22,16 +22,16 @@ except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
 
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
-        MainWindow.setObjectName(_fromUtf8("MainWindow"))
-        MainWindow.resize(364, 122)
+class Ui_LoginWindow(object):
+    def setupUi(self, LoginWindow):
+        LoginWindow.setObjectName(_fromUtf8("LoginWindow"))
+        LoginWindow.resize(364, 122)
         sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
-        MainWindow.setSizePolicy(sizePolicy)
-        self.centralwidget = QtGui.QWidget(MainWindow)
+        sizePolicy.setHeightForWidth(LoginWindow.sizePolicy().hasHeightForWidth())
+        LoginWindow.setSizePolicy(sizePolicy)
+        self.centralwidget = QtGui.QWidget(LoginWindow)
         self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
         self.formLayoutWidget = QtGui.QWidget(self.centralwidget)
         self.formLayoutWidget.setGeometry(QtCore.QRect(0, 0, 361, 151))
@@ -54,17 +54,17 @@ class Ui_MainWindow(object):
         self.loginButton = QtGui.QPushButton(self.formLayoutWidget)
         self.loginButton.setObjectName(_fromUtf8("loginButton"))
         self.formLayout.setWidget(2, QtGui.QFormLayout.SpanningRole, self.loginButton)
-        MainWindow.setCentralWidget(self.centralwidget)
-        self.statusbar = QtGui.QStatusBar(MainWindow)
+        LoginWindow.setCentralWidget(self.centralwidget)
+        self.statusbar = QtGui.QStatusBar(LoginWindow)
         self.statusbar.setObjectName(_fromUtf8("statusbar"))
-        MainWindow.setStatusBar(self.statusbar)
+        LoginWindow.setStatusBar(self.statusbar)
 
-        self.retranslateUi(MainWindow)
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        self.retranslateUi(LoginWindow)
+        QtCore.QMetaObject.connectSlotsByName(LoginWindow)
 
-    def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(_translate("MainWindow", "Login", None))
-        self.unameLabel.setText(_translate("MainWindow", "Username", None))
-        self.passwordLabel.setText(_translate("MainWindow", "Password", None))
-        self.loginButton.setText(_translate("MainWindow", "Login", None))
+    def retranslateUi(self, LoginWindow):
+        LoginWindow.setWindowTitle(_translate("LoginWindow", "Login", None))
+        self.unameLabel.setText(_translate("LoginWindow", "Username", None))
+        self.passwordLabel.setText(_translate("LoginWindow", "Password", None))
+        self.loginButton.setText(_translate("LoginWindow", "Login", None))
 
